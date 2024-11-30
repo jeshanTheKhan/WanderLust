@@ -11,6 +11,9 @@ use App\Models\Guide;
 use App\Models\Blog;
 use App\Models\Testimonial;
 use App\Models\About;
+use App\Models\Office;
+use Auth;
+
 
 use Illuminate\Http\Request;
 
@@ -48,6 +51,18 @@ class WelcomeController extends Controller
         $service=Service::where('service_status',1)->take(4)->get();
         $testimonial=Testimonial::where('status',1)->get();
         return view('Front.service',compact('service','testimonial'));
+    }
+    public function notice(){
+     $office=Office::where('status',1)->first();
+        return view('Front.notice',compact('office'));
+    }
+    public function policy(){
+     $office=Office::where('status',1)->first();
+        return view('Front.policy',compact('office'));
+    }
+    public function term(){
+     $office=Office::where('status',1)->first();
+        return view('Front.term',compact('office'));
     }
     public function packages(){
         $package_name=Package::where('package_status',1)->get();

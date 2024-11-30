@@ -12,21 +12,23 @@
     <!-- Header End -->
 
 
-<!-- Package Details -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <!-- Main Content -->
-            <div class="col-lg-8">
-                <h2 class="mb-4">{{ $data->package_name }}</h2>
-                <img src="{{asset('storage/back/media/package/'.$data->package_images)}}" style="width: 50%;height:50%;" alt="Avatar" title="Change the avatar">
-                <p class="lead">{{ $data->short_description }}</p>
-                
-               
-                <p class="lead">{!! $data->main_description !!}</p>
-              
-            </div>
-        </div>
-    </div>
+
 </section>
+<div class="container-fluid p-0">
+    <!-- Header -->
+
+  
+    <!-- Package Details -->
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="mb-4">{{ $data->package_name }}</h2>
+          <img src="{{asset('storage/back/media/package/'.$data->package_images)}}" class="img-fluid mb-4 rounded" alt="{{ $data->package_name }}">
+          <p class="lead mb-4">{{ $data->short_description }}</p>
+          <div class="package-description">
+            {!! $data->main_description !!}
+          </div>
+        </div>
+      </div>
+    </div>
 @endsection

@@ -83,7 +83,7 @@
                             </div>
    
                         </div>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+                        
                     </div>
                 </div>
                 @endforeach

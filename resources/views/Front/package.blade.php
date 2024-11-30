@@ -1,6 +1,16 @@
 @extends('layouts.front.frontend')
 @section('content')
 
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h3 class="text-white display-3 mb-4">Package</h1>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
 <!-- Packages Start -->
 <div class="container-fluid packages py-5">
     <div class="container py-5">

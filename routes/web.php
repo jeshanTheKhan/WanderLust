@@ -16,6 +16,9 @@ Route::get('/services', [WelcomeController::class, 'services'])->name('services'
 Route::get('/packages', [WelcomeController::class, 'packages'])->name('packages');
 Route::get('/blog', [WelcomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
+Route::get('/notice', [WelcomeController::class, 'notice'])->name('notice');
+Route::get('/policy', [WelcomeController::class, 'policy'])->name('policy');
+Route::get('/term', [WelcomeController::class, 'term'])->name('term');
 
 //show pakage details
 Route::get('package-details/{id}', [WelcomeController::class, 'details'])->name('package.details');
