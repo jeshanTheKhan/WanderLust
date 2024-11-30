@@ -8,6 +8,7 @@ use App\Models\Package;
 use App\Models\Place;
 use Str;
 use Image;
+use Auth;
 
 class PackageController extends Controller
 {
@@ -23,6 +24,7 @@ class PackageController extends Controller
         $store->package_slug=Str::slug($req->header);
         $store->short_description=$req->description;
         $store->main_description=$req->long_description;
+        $store->user=Auth::user();
         $store->place=$req->place;
 
         if ($req->file('main_thumbnail')) {
@@ -132,6 +134,11 @@ class PackageController extends Controller
         );
         
         return redirect()->back()->with($notification);
+    }
+    // View
+    public function view($id){
+        $package=Package::find($id);
+        return view('Admin.Package.view',compact('package'));
     }
 	
 

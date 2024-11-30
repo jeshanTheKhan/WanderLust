@@ -23,7 +23,6 @@ Route::get('blog-details/{id}', [WelcomeController::class, 'blog_details'])->nam
 
 
 Route::get('/Pending-Book', [BookingController::class, 'pending'])->name('pending.book');
-Route::get('/Complete-Book', [BookingController::class, 'complete'])->name('complete.book');
 
 //book now from homepage
 Route::post('/Book-Request', [BookingController::class, 'bookReq'])->name('booking.request');

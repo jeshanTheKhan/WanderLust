@@ -32,6 +32,11 @@
             <li><a href="{{ route('shop.all.testimonial') }}">All Services</a></li>
           </ul>
         </li>
+        <li><a><i class="fa fa-home"></i> Booking History <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{{ route('shop.all.booking') }}">All Services</a></li>
+          </ul>
+        </li>
         
                 
       </ul>

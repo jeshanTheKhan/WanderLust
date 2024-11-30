@@ -204,9 +204,6 @@
                         <div class="col-6 text-start px-0">
                             <a href="{{route('package.details',$package->package_id)}}" class="btn-hover btn text-white py-2 px-4">Read More</a>
                         </div>
-                        <div class="col-6 text-end px-0">
-                            <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                        </div>
                     </div>
                 </div>
             
@@ -222,8 +219,8 @@
 </div>
 <!-- Packages End -->
 
-   <!-- Tour Booking Start -->
-   <div class="container-fluid booking py-5">
+ <!-- Tour Booking Start -->
+ <div class="container-fluid booking py-5">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
@@ -238,39 +235,49 @@
             <div class="col-lg-6">
                 <h1 class="text-white mb-3">Book A Tour Deals</h1>
                 <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure Trip With WanderLust. Get More Deal Offers Here.</p>
-                <form>
+                <form method="POST" action="{{route('booking.request')}}">
+                @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control bg-white border-0" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control bg-white border-0" id="name" name="name" placeholder="Your Name">
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control bg-white border-0" id="email" placeholder="Your Email">
+                                <input type="email" class="form-control bg-white border-0" id="email" name="email" placeholder="Your Email">
                                 <label for="email">Your Email</label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                <label for="datetime">Date & Time</label>
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="email" name="days" placeholder="Number of Day's">
+                                <label for="text">Stay Day's</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="select1">
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 2</option>
-                                    <option value="3">Destination 3</option>
+                                <input type="date" class="form-control bg-white border-0" id="date" name="date" placeholder="Select Date" />
+                                <label for="date">Select Date</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select bg-white border-0" id="select1" name="place">
+                                    @foreach ($place as $place)
+                                    <option value="{{ $place->place_name }}">{{ $place->place_name }}</option>
+                                    @endforeach
+                                    
+                                    
                                 </select>
                                 <label for="select1">Destination</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="SelectPerson">
+                                <select class="form-select bg-white border-0" id="SelectPerson"  name="person" >
                                     <option value="1">Persons 1</option>
                                     <option value="2">Persons 2</option>
                                     <option value="3">Persons 3</option>
@@ -278,20 +285,21 @@
                                 <label for="SelectPerson">Persons</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="CategoriesSelect">
-                                    <option value="1">Kids</option>
-                                    <option value="2">1</option>
-                                    <option value="3">2</option>
-                                    <option value="3">3</option>
+                                <select class="form-select bg-white border-0" id="CategoriesSelect"  name="pakage" >
+                                    @foreach ($package_name as $package_name)
+                                    <option value="{{ $package_name->package_id }}">{{ $package_name->package_name }}</option>
+                                    @endforeach
+                                    
+
                                 </select>
-                                <label for="CategoriesSelect">Categories</label>
+                                <label for="CategoriesSelect">Package Name</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <textarea class="form-control bg-white border-0" placeholder="Special Request" name="special"  id="message" style="height: 100px"></textarea>
                                 <label for="message">Special Request</label>
                             </div>
                         </div>

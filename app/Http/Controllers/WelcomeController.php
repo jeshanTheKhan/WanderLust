@@ -50,8 +50,10 @@ class WelcomeController extends Controller
         return view('Front.service',compact('service','testimonial'));
     }
     public function packages(){
+        $package_name=Package::where('package_status',1)->get();
+        $place=Place::where('place_status',1)->get();
         $package=Package::where('package_status',1)->get();
-        return view('Front.package',compact('package'));
+        return view('Front.package',compact('package','place','package_name'));
     }
     public function blog(){
         $blog=Blog::where('blog_status',1)->get();
@@ -99,7 +101,13 @@ class WelcomeController extends Controller
 		return view('Front.Package-details',compact('data'));
 	}
     public function blog_details($id){
+        $package = Package::where('package_status', 1)
+        ->latest() // Or ->orderBy('id', 'desc') for a specific column like 'id'
+        ->take(2)
+        ->get();
+    
+        $place=Place::all();
 		$data = Blog::find($id);
-		return view('Front.blog-details',compact('data'));
+		return view('Front.blog-details',compact('data','place','package'));
 	}
 }

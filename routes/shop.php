@@ -6,6 +6,7 @@ use App\Http\Controllers\Shop\DestinationController;
 use App\Http\Controllers\Shop\GuideController;
 use App\Http\Controllers\Shop\BlogController;
 use App\Http\Controllers\Shop\TestimonialController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/Shop/Admin-Dashboard', [ShopAdminController::class, 'index'])->name('home');
@@ -16,6 +17,7 @@ Route::post('/Shop/Save-Package', [PackageController::class, 'save'])->name('sav
 Route::get('/Shop/All-Package', [PackageController::class, 'table'])->name('all.package');
 Route::post('/Shop/Package-status/{id}', [PackageController::class, 'UpdateStatus'])->name('package.updatestatus');;
 Route::get('/Shop/Edit-Package/{id}', [PackageController::class, 'edit'])->name('package.edit');
+Route::get('/Shop/View-Package/{id}', [PackageController::class, 'view'])->name('package.view');
 Route::post('/Shop/Update-Package', [PackageController::class, 'update'])->name('update.package');
 Route::get('/Shop/Delete-Package/{id}', [PackageController::class, 'del'])->name('package.del');
 
@@ -54,6 +56,10 @@ Route::post('/Shop/testimonial-Update-status/{id}', [TestimonialController::clas
 Route::get('/Shop/Edit-testimonial/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
 Route::post('/Shop/Update-testimonial', [TestimonialController::class, 'update'])->name('update.testimonial');
 Route::get('/Shop/Delete-testimonial/{id}', [TestimonialController::class, 'del'])->name('testimonial.del');
+
+// Booking
+Route::get('/Shop/All-booking', [BookingController::class, 'history'])->name('all.booking');
+Route::post('/Shop/booking-status/{id}', [BookingController::class, 'UpdateStatus'])->name('book.updatestatus');
 
 Route::middleware('auth')->group(function () {
     Route::get('/Shop/profile', [ShopAdminController::class, 'edit'])->name('profile.edit');

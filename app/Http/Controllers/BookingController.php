@@ -11,11 +11,13 @@ class BookingController extends Controller
 {
     //
     public function pending(){
-        return view('pending-book');
+		$data=Booking::all();
+        return view('pending-book',compact('data'));
     }
 
-    public function complete(){
-        return view('complete-book');
+    public function history(){
+		$data=Booking::all();
+        return view('complete-book',compact('data'));
     }
 	
 	//book req
@@ -57,4 +59,16 @@ class BookingController extends Controller
 		}
 		return redirect()->back()->with($notification);
 	}
+	public function UpdateStatus(Request $request, $id)
+    {
+    
+        $data = Booking::find($id);
+
+ 
+        $data->status = $request->input('status');
+        $data->save();  
+
+  
+        return redirect()->back()->with('status', 'Status updated successfully!');
+    }
 }

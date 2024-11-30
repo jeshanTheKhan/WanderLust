@@ -48,6 +48,7 @@ Route::get('/Moderator/Add-Package', [PackageController::class, 'index'])->name(
 Route::post('/Moderator/Save-Package', [PackageController::class, 'save'])->name('save.package');
 Route::get('/Moderator/All-Package', [PackageController::class, 'table'])->name('all.package');
 Route::post('/Moderator/Package-status/{id}', [PackageController::class, 'UpdateStatus'])->name('package.updatestatus');
+Route::get('/Moderator/View-Package/{id}', [PackageController::class, 'view'])->name('package.view');
 Route::get('/Moderator/Edit-Package/{id}', [PackageController::class, 'edit'])->name('package.edit');
 Route::post('/Moderator/Update-Package', [PackageController::class, 'update'])->name('update.package');
 Route::get('/Moderator/Delete-Package/{id}', [PackageController::class, 'del'])->name('package.del');

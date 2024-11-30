@@ -8,6 +8,7 @@ use App\Models\Package;
 use App\Models\Place;
 use Str;
 use Image;
+use Auth;
 
 class PackageController extends Controller
 {
@@ -22,6 +23,7 @@ class PackageController extends Controller
         $store->package_slug=Str::slug($req->header);
         $store->short_description=$req->description;
         $store->main_description=$req->long_description;
+        $store->user=Auth::user();
         $store->place=$req->place;
 
         if ($req->file('main_thumbnail')) {
@@ -48,7 +50,7 @@ class PackageController extends Controller
     // Database
     // Table
     public function table(){
-        $data=Package::all();
+        $data = Package::where('user', Auth::user()->name)->get();
         return view('Shop.Package.table',compact('data'));
     }
     // Status Update
@@ -131,5 +133,9 @@ class PackageController extends Controller
         );
         
         return redirect()->back()->with($notification);
+    }
+    public function view($id){
+        $package = Package::find($id);
+        return view('Shop.Package.view', compact('package'));
     }
 }

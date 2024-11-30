@@ -84,6 +84,8 @@
                              @endif  
                             </td>
                             <td>
+                              <a href="{{ route('shop.package.view', $data->package_id) }}"><i
+                                class="fa fa-eye"></i></a>
                                 <a href="{{ route('shop.package.edit', $data->package_id) }}"><i
                                     class="fa fa-pencil"></i></a>
                             <a href="{{ route('shop.package.del', $data->package_id) }}"><i

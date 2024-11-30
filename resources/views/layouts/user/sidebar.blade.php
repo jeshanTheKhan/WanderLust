@@ -195,8 +195,7 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('pending.book') }}">Pending</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('complete.book') }}">Complete</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('pending.book') }}">History</a></li>
           </ul>
         </div>
       </li>

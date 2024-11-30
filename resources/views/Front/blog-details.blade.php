@@ -41,7 +41,7 @@
 
 
             <!-- Comments Section -->
-            <div class="mt-5">
+            {{-- <div class="mt-5">
                 <h3 class="mb-4">3 Comments</h3>
                 
                 <!-- Comment -->
@@ -75,7 +75,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Sidebar -->
@@ -94,12 +94,12 @@
             <!-- Categories Widget -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">Categories</h4>
+                    <h4 class="card-title mb-3">Place List</h4>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Adventure</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Travel Tips</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Destinations</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none">Photography</a></li>
+                        @foreach ($place as $place)
+                        <li class="mb-2"><a  class="text-decoration-none">{{ $place->place_name }}</a></li>           
+                        @endforeach
+       
                     </ul>
                 </div>
             </div>
@@ -107,21 +107,18 @@
             <!-- Recent Posts Widget -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">Recent Posts</h4>
+                    <h4 class="card-title mb-3">Recent Package</h4>
+                    @foreach ($package as $package)
                     <div class="d-flex mb-3">
-                        <img src="/placeholder.svg" alt="Post thumbnail" class="rounded" width="80" height="80">
+                        <img src="{{asset('storage/back/media/package/'.$package->package_images)}}" alt="Post thumbnail" class="rounded" width="80" height="80">
                         <div class="ms-3">
-                            <h6 class="mb-1"><a href="#" class="text-decoration-none">Top 10 Beach Destinations</a></h6>
-                            <small class="text-muted">December 10, 2023</small>
+                            <h6 class="mb-1"><a href="#" class="text-decoration-none">{{ $package->package_name }}</a></h6>
+                            <small class="text-muted">{{ $package->place }}</small>
                         </div>
                     </div>
-                    <div class="d-flex mb-3">
-                        <img src="/placeholder.svg" alt="Post thumbnail" class="rounded" width="80" height="80">
-                        <div class="ms-3">
-                            <h6 class="mb-1"><a href="#" class="text-decoration-none">Essential Travel Photography Tips</a></h6>
-                            <small class="text-muted">December 8, 2023</small>
-                        </div>
-                    </div>
+                    @endforeach
+                
+               
                 </div>
             </div>
 

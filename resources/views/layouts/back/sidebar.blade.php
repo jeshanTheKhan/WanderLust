@@ -20,6 +20,12 @@
             <li><a href="{{ route('admin.all.about') }}">All About</a></li>
           </ul>
         </li>
+        <li><a><i class="fa fa-book"></i> Office <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{{ route('admin.add.office') }}">Add Office</a></li>
+            <li><a href="{{ route('admin.all.office') }}">All Office</a></li>
+          </ul>
+        </li>
         <li><a><i class="fa fa-edit"></i> Place Name <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="{{ route('admin.add.place') }}">Add place</a></li>

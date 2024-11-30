@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\GuideController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\OfficeController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/Admin/Admin-Dashboard', [AdminController::class, 'index'])->name('home');
@@ -67,6 +68,7 @@ Route::post('/Admin/Save-Package', [PackageController::class, 'save'])->name('sa
 Route::get('/Admin/All-Package', [PackageController::class, 'table'])->name('all.package');
 Route::post('/Admin/Package-status/{id}', [PackageController::class, 'UpdateStatus'])->name('package.updatestatus');
 Route::get('/Admin/Edit-Package/{id}', [PackageController::class, 'edit'])->name('package.edit');
+Route::get('/Admin/Ciew-Package/{id}', [PackageController::class, 'view'])->name('package.view');
 Route::post('/Admin/Update-Package', [PackageController::class, 'update'])->name('update.package');
 Route::get('/Admin/Delete-Package/{id}', [PackageController::class, 'del'])->name('package.del');
 
@@ -115,6 +117,16 @@ Route::post('/Admin/about-Update-status/{id}', [AboutController::class, 'UpdateS
 Route::get('/Admin/Edit-About/{id}', [AboutController::class, 'edit'])->name('about.edit');
 Route::post('/Admin/Update-About', [AboutController::class, 'update'])->name('update.about');
 Route::get('/Admin/Delete-About/{id}', [AboutController::class, 'del'])->name('about.del');
+
+// Office Section
+Route::get('/Admin/Add-Office', [OfficeController::class, 'index'])->name('add.office');
+Route::post('/Admin/Save-Office', [OfficeController::class, 'Save'])->name('save.office');
+Route::get('/Admin/All-Office', [OfficeController::class, 'table'])->name('all.office');
+Route::post('/Admin/Office-Update-status/{id}', [OfficeController::class, 'UpdateStatus'])->name('office.updatestatus');
+Route::get('/Admin/View-Office/{id}', [OfficeController::class, 'view'])->name('office.view');
+Route::get('/Admin/Edit-Office/{id}', [OfficeController::class, 'edit'])->name('office.edit');
+Route::post('/Admin/Update-Office', [OfficeController::class, 'update'])->name('update.office');
+Route::get('/Admin/Delete-Office/{id}', [OfficeController::class, 'del'])->name('office.del');
 
 Route::get('/Admin/message', [WelcomeController::class, 'message'])->name('all.message');
 

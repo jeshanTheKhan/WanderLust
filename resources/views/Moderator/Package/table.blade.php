@@ -84,8 +84,10 @@
                              @endif  
                             </td>
                             <td>
-                                <a href="{{ route('moderator.package.edit', $data->package_id) }}"><i
-                                    class="fa fa-pencil"></i></a>
+                                <a href="{{ route('moderator.package.view', $data->package_id) }}"><i
+                                    class="fa fa-eye"></i></a>
+                                    <a href="{{ route('moderator.package.edit', $data->package_id) }}"><i
+                                      class="fa fa-pencil"></i></a>
                             <a href="{{ route('moderator.package.del', $data->package_id) }}"><i
                                     class="fa fa-trash"></i></a>
                             </td>

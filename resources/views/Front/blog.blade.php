@@ -42,7 +42,7 @@
                                 <p class="mb-3">Posted By: {{ $blog->user }} </p>
                                 <a href="#" class="h4">Adventures Trip</a>
                                 <p class="my-3">{{ $blog->blog_short_description }}</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                                <a href="{{ route('blog.details',$blog->blog_id ) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                             </div>
                         </div>
                     </div>
