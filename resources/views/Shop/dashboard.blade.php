@@ -1,5 +1,5 @@
 
-@extends('layouts.Shop.backend')
+@extends('layouts.shop.backend')
 @section('content')
 <div class="right_col" role="main">
   <!-- top tiles -->
