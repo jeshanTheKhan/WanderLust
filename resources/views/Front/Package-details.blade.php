@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2 class="mb-4">{{ $data->package_name }}</h2>
-          <img src="{{asset('storage/back/media/package/'.$data->package_images)}}" class="img-fluid mb-4 rounded" alt="{{ $data->package_name }}">
+          <img src="{{asset('storage/back/media/package/'.$data->package_images)}}" class="img-fluid mb-4" width="100%"  alt="{{ $data->package_name }}">
           <p class="lead mb-4">{{ $data->short_description }}</p>
           <div class="package-description">
             {!! $data->main_description !!}

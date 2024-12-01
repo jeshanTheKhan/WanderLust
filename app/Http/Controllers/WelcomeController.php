@@ -31,11 +31,16 @@ class WelcomeController extends Controller
                            ->distinct() // Ensure unique results
                            ->get();
 
-         $package=Package::where('package_status',1)->get();
+        
+         $package = Package::where('package_status', 1)
+                ->orderBy('package_id', 'desc') // Sort by 'id' in descending order
+                ->take(6)
+                ->get();
+
          $package_name=Package::where('package_status',1)->get();
          $about=About::where('status',1)->get();
          $guide=Guide::where('guide_status',1)->get();
-         $blog=Blog::where('blog_status',1)->get();
+         $blog=Blog::where('blog_status',1)->take(6)->get();
          $testimonial=Testimonial::where('status',1)->get();
         return view('welcome',compact('carosel','service','place','package','guide','blog','testimonial','about','package_name'));
     }
