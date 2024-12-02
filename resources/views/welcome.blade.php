@@ -600,10 +600,7 @@
                     <div class="col-lg-6">
                         <h5 class="section-booking-title pe-3">Booking</h5>
                         <h1 class="text-white mb-4">Online Booking</h1>
-                        <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.
-                        </p>
-                        <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.
-                        </p>
+                        <p class="text-white mb-4">Ready to turn your travel dreams into reality? With our seamless online booking system, your next adventure is just a click away. Whether you're planning a tranquil escape or an exhilarating journey, our platform ensures a hassle-free experience from start to finish. Discover the world your way—quick, easy, and tailored to you.</p>
                         <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Read More</a>
                     </div>
                     <div class="col-lg-6">
@@ -803,8 +800,7 @@
                 <div class="mx-auto text-center" style="max-width: 900px;">
                     <h5 class="subscribe-title px-3">Subscribe</h5>
                     <h1 class="text-white mb-4">Our Newsletter</h1>
-                    <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
-                    </p>
+                    <p class="text-white mb-5">For Next Update .Please Subscribe Our Website.Please Stay With us.</p>
                     <div class="position-relative mx-auto">
                         <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
