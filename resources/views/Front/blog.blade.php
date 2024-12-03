@@ -12,45 +12,45 @@
         </div>
         <!-- Header End -->
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    
-                </div>
-                <div class="row g-4 justify-content-center">
-                    
-                    @foreach ($blog as $blog)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="{{asset('storage/back/media/blog/'.$blog->blog_main_image)}}" alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>{{ $blog->blog_date }}</small>
+       <!-- Blog Start -->
+       <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Our Blog</h5>
+                <h1 class="mb-4">Popular Travel Blogs</h1>
+                
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                @foreach ($blog as $blog)
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <div class="blog-img-inner">
+                                <img class="img-fluid w-100 rounded-top" src="{{asset('storage/back/media/blog/'.$blog->blog_main_image)}}" alt="Image">
+                                <div class="blog-icon">
+                                    <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                 </div>
                             </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: {{ $blog->user }} </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">{{ $blog->blog_short_description }}</p>
-                                <a href="{{ route('blog.details',$blog->blog_id ) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>{{ $blog->blog_date }}</small>
                             </div>
                         </div>
+                        <div class="blog-content border border-top-0 rounded-bottom p-4">
+                            <p class="mb-3">Posted By: {{ $blog->blog_posted }} </p>
+                            <a href="#" class="h4">{{ $blog->blog_header }}</a>
+                            <p class="my-3">{{ $blog->blog_short_description }}</p>
+                            <a href="{{ route('blog.details',$blog->blog_id ) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                        </div>
                     </div>
-                    @endforeach
-                    
-
                 </div>
+                @endforeach
+                
+
             </div>
         </div>
-        <!-- Blog End -->
+    </div>
+    <!-- Blog End -->
 
                <!-- Subscribe Start -->
                <div class="container-fluid subscribe py-5">

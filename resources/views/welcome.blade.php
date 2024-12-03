@@ -337,40 +337,40 @@
 
       
 
- <!-- Package Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Our Blog</h5>
-                    <h1 class="mb-4">Popular Travel Blogs</h1>
-                    
-                </div>
-                <div class="row g-4 justify-content-center">
-                    
-                    @foreach ($package as $package)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src="{{asset('storage/back/media/package/'.$package->package_images)}}" alt="Image">
-                                    
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Package Name : {{ $package->package_name }} </p>
-                                <a href="#" class="h4">{{ $package->blog_header }}</a>
-                                <p class="my-3">{{ $package->short_description }}</p>
-                                <a href="{{ route('package.details', $package->package_id) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
+<!-- Package Start -->
+<div class="container-fluid blog py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Our Latest Package</h5>
+            <h1 class="mb-4">Our Popular & Latest Package</h1>
+            
+        </div>
+        <div class="row g-4 justify-content-center">
+            
+            @foreach ($package as $package)
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <div class="blog-img-inner">
+                            <img class="img-fluid w-100 rounded-top" src="{{asset('storage/back/media/package/'.$package->package_images)}}" alt="Image">
+                            
                         </div>
                     </div>
-                    @endforeach
-                    
-
+                    <div class="blog-content border border-top-0 rounded-bottom p-4">
+                        <p class="mb-3">Package Name : {{ $package->package_name }} </p>
+                        <a href="#" class="h4">{{ $package->blog_header }}</a>
+                        <p class="my-3">{{ $package->short_description }}</p>
+                        <a href="{{ route('package.details', $package->package_id) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                    </div>
                 </div>
             </div>
+            @endforeach
+            
+
         </div>
-        <!-- Package End -->
+    </div>
+</div>
+<!-- Package End -->
 
        
 
