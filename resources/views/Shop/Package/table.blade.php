@@ -1,4 +1,4 @@
-@extends('layouts.shop.backend')
+@extends('layouts.Shop.backend')
 @section('content')
 <div class="right_col" role="main">
     <div class="">

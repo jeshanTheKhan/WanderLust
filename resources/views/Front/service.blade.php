@@ -5,51 +5,43 @@
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">Our Services</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Services</li>
+            <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
         </ol>    
     </div>
 </div>
 <!-- Header End -->
 
-    <!-- Services Start -->
-    <div class="container-fluid bg-light service py-5">
-        <div class="container py-5">
-            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                <h5 class="section-title px-3">Searvices</h5>
-                <h1 class="mb-0">Our Services</h1>
-            </div>
-            <div class="row g-4">
-                @foreach ($service as $service)
-                <div class="col-lg-12" style="text-align: right">
-                    <div class="row g-12">
-                        <div class="col-12">
-                            <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                <div class="service-content text-end">
-                                    <h5 class="mb-4" >{{ $service->service_header }}</h5>
-                                    <p class="mb-0">{{ $service->service_description }}
-                                    </p>
-                                </div>
-                                <div class="service-icon p-4">
-                                    <i class="fa fa-globe fa-4x text-primary"></i>
-                                </div>
+   <!-- Services Start -->
+   <div class="container-fluid bg-light service py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Services</h5>
+            <h1 class="mb-0">Our Services</h1>
+        </div>
+        <div class="row g-4 justify-content-end">
+            @foreach($service as $service)
+                        <div class="col-lg-12">
+                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4">
+                    <div class="service-content text-end pe-4 flex-grow-1">
+                                <h5 class="mb-4" >{{ $service->service_header }}</h5>
+                                <p class="mb-0">{{ $service->service_description }}
+                                </p>
+                            </div>
+                            <div class="service-icon flex-shrink-0">
+                                <img src="{{ asset('storage/back/media/services/'.$service->service_icon) }}" style="width: 80px; height: auto;" 
+                                alt="Avatar" 
+                                title="Service Icon">
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
-               
-
-                <div class="col-12">
-                    <div class="text-center">
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Service More</a>
-                    </div>
-                </div>
             </div>
+            @endforeach
+
         </div>
     </div>
-    <!-- Services End -->
+</div>
+<!-- Services End -->
     <!-- Testimonial Start -->
 <div class="container-fluid testimonial py-5">
     <div class="container py-5">

@@ -79,7 +79,7 @@ class AboutController extends Controller
             $image_ext = chr(rand(65, 90)) .'-'.rand(00000, 99999). '.' . $image->getClientOriginalExtension();
          
              // Resize and save the image
-             Image::make($image)->resize(300, 300)->save('storage/back/media/about/' . $image_ext);
+             Image::make($image)->resize(300, 400)->save('storage/back/media/about/' . $image_ext);
          
              // Delete the old image if it exists
              if ($store->images && file_exists('storage/back/media/about/' . $store->images)) {

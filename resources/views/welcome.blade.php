@@ -68,8 +68,10 @@
         @foreach ($about as $about)
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-                <div class="about-img position-relative">
+                <div class="about-img position-relative" >
+                    <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
                     <img src="{{ asset('storage/back/media/about/'.$about->image) }}" class="img-fluid w-100" alt="About {{ $about->name }}">
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -77,32 +79,7 @@
                     <h2 class="mb-3">{{ $about->name }}</h2>
                     <h4 class="text-primary mb-4">{{ $about->position }} at {{ $about->hotel_name }}</h4>
                     <p class="mb-4">{!! $about->description !!}</p>
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-3"></i>
-                                <span>Professional Staff</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-3"></i>
-                                <span>24/7 Support</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-3"></i>
-                                <span>Fair Prices</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-check-circle text-primary me-3"></i>
-                                <span>Memorable Experiences</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -115,35 +92,29 @@
         <div class="container-fluid bg-light service py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Searvices</h5>
+                    <h5 class="section-title px-3">Services</h5>
                     <h1 class="mb-0">Our Services</h1>
                 </div>
-                <div class="row g-4">
-                    @foreach ($service as $service)
-                    <div class="col-lg-12" style="text-align: right">
-                        <div class="row g-12">
-                            <div class="col-12">
-                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                    <div class="service-content text-end">
+                <div class="row g-4 justify-content-end">
+                    @foreach($service as $service)
+                                <div class="col-lg-12">
+                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4">
+                            <div class="service-content text-end pe-4 flex-grow-1">
                                         <h5 class="mb-4" >{{ $service->service_header }}</h5>
                                         <p class="mb-0">{{ $service->service_description }}
                                         </p>
                                     </div>
-                                    <div class="service-icon p-4">
-                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{{ asset('storage/back/media/services/'.$service->service_icon) }}" style="width: 80px; height: auto;" 
+                                        alt="Avatar" 
+                                        title="Service Icon">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                   
- 
-                    <div class="col-12">
-                        <div class="text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Service More</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -549,8 +520,43 @@
         </div> --}}
         <!-- Explore Tour Start -->
 
+        <!-- Package Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Our Blog</h5>
+                    <h1 class="mb-4">Popular Travel Blogs</h1>
+                    
+                </div>
+                <div class="row g-4 justify-content-center">
+                    
+                    @foreach ($package as $package)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="{{asset('storage/back/media/package/'.$package->package_images)}}" alt="Image">
+                                    
+                                </div>
+                            </div>
+                            <div class="blog-content border border-top-0 rounded-bottom p-4">
+                                <p class="mb-3">Package Name : {{ $package->package_name }} </p>
+                                <a href="#" class="h4">{{ $package->blog_header }}</a>
+                                <p class="my-3">{{ $package->short_description }}</p>
+                                <a href="{{ route('package.details', $package->package_id) }}" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    
+
+                </div>
+            </div>
+        </div>
+        <!-- Package End -->
+
 <!-- Packages Start -->
-<div class="container-xxl py-5">
+{{-- <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
@@ -588,7 +594,7 @@
             @endforeach
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Packages End -->
 
        

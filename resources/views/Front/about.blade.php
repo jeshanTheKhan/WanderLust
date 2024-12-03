@@ -7,8 +7,6 @@
                 <h3 class="text-white display-3 mb-4">About Us</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">About</li>
                 </ol>    
             </div>
         </div>

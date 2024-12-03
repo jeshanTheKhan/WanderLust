@@ -1,4 +1,4 @@
-@extends('layouts.back.backend')
+@extends('layouts.Moderator.backend')
 @section('content')
 <div class="right_col" role="main">
     <div class="">
