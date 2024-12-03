@@ -23,7 +23,7 @@ class PackageController extends Controller
         $store->package_slug=Str::slug($req->header);
         $store->short_description=$req->description;
         $store->main_description=$req->long_description;
-        $store->user=Auth::user();
+        $store->user=Auth::user()->name;
         $store->place=$req->place;
 
         if ($req->file('main_thumbnail')) {

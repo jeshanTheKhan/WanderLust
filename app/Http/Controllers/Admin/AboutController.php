@@ -24,7 +24,7 @@ class AboutController extends Controller
         if ($req->file('main_thumbnail')) {
             $image = $req->file('main_thumbnail');
             $image_ext = chr(rand(65, 90)) .'-'.rand(00000, 99999). '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('storage/back/media/about/' . $image_ext);
+            Image::make($image)->resize(300, 400)->save('storage/back/media/about/' . $image_ext);
             $store->image = $image_ext;
         }
         $store->save();
