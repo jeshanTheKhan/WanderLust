@@ -11,7 +11,7 @@ class BookingController extends Controller
 {
     //
     public function pending(){
-		$data=Booking::all();
+		$data=Booking::where('email',Auth::user()->email)->get();
         return view('pending-book',compact('data'));
     }
 
